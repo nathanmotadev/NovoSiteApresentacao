@@ -2,7 +2,6 @@
 (function () {
   var lb = document.getElementById('lightbox');
   var img = document.getElementById('lb-img');
-  var cap = document.getElementById('lb-cap');
   var shots = Array.prototype.slice.call(document.querySelectorAll('.gallery .shot'));
   // ordem de navegação = ordem das fotos no arquivo (data-i)
   shots.sort(function (a, b) { return a.dataset.i - b.dataset.i; });
@@ -14,7 +13,6 @@
     var im = shots[cur].querySelector('img');
     img.src = im.currentSrc || im.src;
     img.alt = im.alt;
-    cap.textContent = im.alt;
     lb.hidden = false;
     document.body.style.overflow = 'hidden';
   }
